@@ -1,0 +1,241 @@
+:root {
+  --mops-primary: #0284c7;
+  --mops-bg: #f1f5f9;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
+  background: var(--mops-bg);
+  color: #0f172a;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--mops-primary);
+}
+
+/* ---------- 页面骨架 ---------- */
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.page-header h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.page-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.page-header .actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.card + .card {
+  margin-top: 16px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.muted {
+  color: #94a3b8;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
+  font-size: 12px;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+/* ---------- 指标卡 ---------- */
+.stat-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-card .label {
+  font-size: 12px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-card .value {
+  font-size: 26px;
+  font-weight: 650;
+  letter-spacing: -0.5px;
+}
+
+.stat-card .sub {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* ---------- 迷你柱状图（无图表库依赖，保证零外部资源） ---------- */
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 160px;
+  padding-top: 8px;
+}
+
+.bars .bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.bars .bar {
+  width: 100%;
+  max-width: 42px;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(180deg, #38bdf8, #0284c7);
+  min-height: 2px;
+  transition: height 0.3s ease;
+}
+
+.bars .bar-label {
+  font-size: 11px;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+/* ---------- 代码 / 日志 ---------- */
+.code-block {
+  margin: 0;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow: auto;
+  max-height: 320px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.log-view {
+  background: #0f172a;
+  border-radius: 8px;
+  padding: 10px 14px;
+  max-height: 320px;
+  overflow: auto;
+  font-family: 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+.log-view .log-line {
+  display: flex;
+  gap: 10px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.log-view .log-time {
+  color: #64748b;
+  flex: none;
+}
+
+.log-view .log-level-info {
+  color: #38bdf8;
+  flex: none;
+  width: 44px;
+}
+
+.log-view .log-level-warn {
+  color: #fbbf24;
+  flex: none;
+  width: 44px;
+}
+
+.log-view .log-level-error {
+  color: #f87171;
+  flex: none;
+  width: 44px;
+}
+
+.state-block {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.trace-line {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.el-table .cell {
+  line-height: 1.5;
+}
+
+.el-drawer__header {
+  margin-bottom: 8px;
+}
